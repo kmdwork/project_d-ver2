@@ -129,11 +129,12 @@ DB設計
     「/login」 ログイン画面
     「/register」 サインアップ画面
     「/dashboard」 ダッシュボード
-    「/DVDtable」 DVD一覧画面
-    「/DVDRegistration」 DVD登録画面
-    「/SuccessRegistration」 完了画面
-    「/MovieInformation」 映画詳細画面
-    「/DVDInformationEdit」 DVD編集画面
+
+    「/mydvdbox/DVDtable」 DVD一覧画面
+    「/mydvdbox/DVDRegistration」 DVD登録画面
+    「/mydvdbox/SuccessRegistration」 完了画面
+    「/mydvdbox/MovieInformation」 映画詳細画面
+    「/mydvdbox/DVDInformationEdit」 DVD編集画面
     
 
 
