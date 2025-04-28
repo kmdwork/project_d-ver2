@@ -23,25 +23,24 @@ DB設計
         name      String?
         email     String   @unique
         password  String   // ハッシュ化されたパスワード
-        ?? createdAt DateTime @default(now())
-        ?? updatedAt DateTime @updatedAt
+        createdAt DateTime @default(now())
+        updatedAt DateTime @updatedAt
         movies    Movie[]
     }
 
     Movie {
         id          String   @id @default(cuid())
         title       String
-        image       String  //画像の扱いについては要考察
-        tmdbId      Int      // TMDbのID
-        dvdBoxId    Int  // DVDボックスの識別子
-        dvdBoxCount Int // 同dvdbox内の何番目に入っているか
-        ?? purchaseDate DateTime?
+        tmdbId      Int?      // TMDbのIDがない場合もある
+        dvdBoxNumber    Int  // DVDボックスの識別子
+        dvdNumber Int // 同dvdbox内の何番目に入っているか
         notes       String?
-        ?? isFavorite  Boolean  @default(false)
+        watchedAt DateTime? // 映画を見た日（オプショナル）
         createdAt   DateTime @default(now())
         updatedAt   DateTime @updatedAt
-        userId      String
-        user        User     @relation(fields: [userId], references: [id])
+        authorId      String
+        author        User     @relation(fields: [authorId], references: [id])
+        image       String?  //今のところは実装なしだが一応確保しておく
     }
 
 
