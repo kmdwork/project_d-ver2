@@ -5,16 +5,17 @@ DVD管理アプリの要件定義
     このアプリでは、ユーザーが所有する映画DVDを登録・管理し、TMDb APIを活用して映画情報を表示します。
 
 技術スタック
+
     フロントエンド: Next.js(15.3.1), TypeScript, TailwindCSS
     バックエンド: Next.js API Routes
-    データベース: 最初は{sqlite}を使う *(PlanetScale (MySQL) または Supabase (PostgreSQL))
-    ORM: {Prisma}
+    データベース: デモ版はsqlite *(PlanetScale (MySQL) または Supabase (PostgreSQL))
+    ORM: Prisma
     外部API: TMDb API
     追加ライブラリ:
-        {React Hook Form} (フォーム管理)
-        (Zod) (バリデーション)
-        {NextAuth.js} (認証)
-        {shadocn} (レイアウト)
+        React Hook Form (フォーム管理)
+        Zod (バリデーション)
+        NextAuth.js (認証)
+        shadocn (レイアウト)
 
 DB設計
 
