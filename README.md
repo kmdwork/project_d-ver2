@@ -109,6 +109,7 @@ DB設計
         DVD登録画面 → (完了画面) -> ホーム画面（登録完了後）
 
 開発工程
+
         1.プロジェクトセットアップ（Next.js, TypeScript, TailwindCSS）
         2.Prismaセットアップ、データベーススキーマ定義
         3.TMDb API連携実装
@@ -119,6 +120,7 @@ DB設計
         8.デプロイ
 
 ページURL
+
     「/」 HOME画面 -----OK (GODVDtableからリンクを飛ばす)
     「/login」 ログイン画面
     「/register」 サインアップ画面
