@@ -2,7 +2,7 @@
 
 import { Movie } from "@/types/movie";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 type PopularMoviesProps = {
     movieDatas: Movie[];
@@ -19,11 +19,16 @@ export default function PopularMovies({movieDatas}: PopularMoviesProps) {
         );
     };
 
-    const handleNext = () => {
+    // const handleNext = () => {
+    //     setCurrentIndex((prevIndex) => 
+    //         prevIndex === movieDatas.length - 3 ? 0 : prevIndex + 1
+    //     );
+    // };
+    const handleNext = useCallback(() => {
         setCurrentIndex((prevIndex) => 
             prevIndex === movieDatas.length - 3 ? 0 : prevIndex + 1
         );
-    };
+    }, [movieDatas.length]);
 
     // 自動でスライドを切り替える処理
     useEffect(() => {
@@ -33,7 +38,7 @@ export default function PopularMovies({movieDatas}: PopularMoviesProps) {
 
         // クリーンアップ
         return () => clearInterval(interval);
-    }, [movieDatas.length]);
+    }, [handleNext]);
     
     return (
         <div className="mt-15 relative w-4/5 mx-auto overflow-hidden rounded-lg shadow-lg bg-gray-800">

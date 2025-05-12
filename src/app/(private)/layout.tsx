@@ -8,7 +8,7 @@ export default function AuthLayout({
     return (
         <>
             <PrivateHeader />
-            <div className="min-h-screen flex items-center justify-center p-4">
+            <div className="">
                 {children}
             </div>
         </>

@@ -60,19 +60,12 @@ DB設計
         3. DVD一覧ページ (DVD Table)
             ページネーション機能（20件ずつ表示）
             検索機能
-                タイトル検索
-                監督/俳優名検索
-                ジャンル検索
-                DVD Box ID検索
+                DVD Box ID別
+                キーワード別
+                　で絞り込み検索ボタンを押して検索
             ??並べ替え機能
                 タイトル (昇順/降順)
-                発売年 (昇順/降順)
                 追加日 (昇順/降順)
-                ??評価 (昇順/降順)
-            フィルタリング機能
-                ??ジャンル別
-                DVD Box ID別
-                お気に入り
 
         4. DVD登録ページ (DVD Registration)
             キーワード検索でTMDb APIから映画候補を10件表示
@@ -125,16 +118,16 @@ DB設計
         8.デプロイ
 
 ページURL
-    「/」 HOME画面
+    「/」 HOME画面 -----OK (GODVDtableからリンクを飛ばす)
     「/login」 ログイン画面
     「/register」 サインアップ画面
     「/dashboard」 ダッシュボード
-
     「/mydvdbox/DVDtable」 DVD一覧画面
+
     「/mydvdbox/DVDRegistration」 DVD登録画面
-    「/mydvdbox/SuccessRegistration」 完了画面
-    「/mydvdbox/MovieInformation」 映画詳細画面
-    「/mydvdbox/DVDInformationEdit」 DVD編集画面
+    「/mydvdbox/DVDRegistration/success」 完了画面
+    「/mydvdbox/[id]/MovieInformation」 映画詳細画面
+    「/mydvdbox/[id]/DVDInformationEdit」 DVD編集画面
     
 
 

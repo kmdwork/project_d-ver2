@@ -3,7 +3,8 @@
 import { signIn } from '@/auth';
 import { AuthError } from 'next-auth';
 import { redirect } from 'next/navigation';
- 
+
+type CustomAuthError = AuthError & { type: string };
  
 export async function authenticate(
   prevState: string | undefined,
@@ -22,7 +23,8 @@ export async function authenticate(
 
   } catch (error) {
     if (error instanceof AuthError) {
-      switch (error.type) {
+      const typedError = error as CustomAuthError;
+      switch (typedError.type) {
         case 'CredentialsSignin':
           return 'メールアドレスまたはパスワードが正しくありません。';
         default:
