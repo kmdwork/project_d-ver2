@@ -18,7 +18,7 @@ export default async function PrivateHeader() {
                 <NavigationMenu>
                     <NavigationMenuList>
                         <NavigationMenuItem>
-                            <Link href="/dashboard" passHref className="font-bold text-xl text-white hover:text-gray-300 transition">
+                            <Link href="/" passHref className="font-bold text-xl text-white hover:text-gray-300 transition">
                                 - DVDTable -
                             </Link>
                         </NavigationMenuItem>

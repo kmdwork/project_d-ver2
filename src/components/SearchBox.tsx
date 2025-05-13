@@ -58,7 +58,7 @@ export default function SearchBox({ userId }: SearchBoxProps) {
             <DialogTrigger>🔍</DialogTrigger>
             <DialogContent>
                 <DialogHeader>
-                <DialogTitle>検索条件</DialogTitle>
+                <DialogTitle className="text-gray-500">検索条件</DialogTitle>
                 <DialogDescription>
                     <Input
                         type="text"
@@ -68,7 +68,7 @@ export default function SearchBox({ userId }: SearchBoxProps) {
                         onChange={(e) => setSearch(e.target.value)}
                     />
                     <Select onValueChange={(e) => setBox(e)}>
-                        <SelectTrigger className="">
+                        <SelectTrigger className=" my-2.5">
                             <SelectValue placeholder="Select BoxNumber" />
                         </SelectTrigger>
                         <SelectContent className="w-full p-2 border rounded-md">

@@ -41,7 +41,7 @@ export default async function DVDTablePage({
         <div className="flex justify-between">
             <h1 className="text-2xl font-bold mb-4">Movie 一覧</h1>
             <div>
-                <Button className="bg-gray-800 hover:bg-gray-400 text-white">
+                <Button className="bg-gray-800 hover:bg-gray-400 text-white mr-1">
                     <Link href="/mydvdbox/dvdregistration">
                         新規登録
                     </Link>

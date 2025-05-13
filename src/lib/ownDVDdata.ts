@@ -81,3 +81,34 @@ export async function getSearchDVDdata({
         ]
     })
 }
+
+
+export async function getDashboardStats(userId: string) {
+    const [totalCount, unwatchedCount, boxBreakdown] = await Promise.all([
+        prisma.movie.count({
+            where: {
+                authorId: userId
+            }
+        }),
+        prisma.movie.count({
+            where: { 
+                authorId: userId,
+                watchedAt: null, 
+            }
+        }),
+        prisma.movie.groupBy({
+            by: ['dvdBoxNumber'],
+            where: { authorId: userId },
+            _count: true,
+            orderBy: { dvdBoxNumber: 'asc' }
+        })
+    ]);
+    return {
+        totalCount,
+        unwatchedCount,
+        boxCounts: boxBreakdown.map((box) => ({
+            boxNumber: box.dvdBoxNumber,
+            count: box._count,
+        }))
+    };
+}
