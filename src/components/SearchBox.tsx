@@ -47,14 +47,16 @@ export default function SearchBox({ userId }: SearchBoxProps) {
     const [search , setSearch] = useState('');
     const [box, setBox] = useState('');
     const router = useRouter();
+    const [open, setOpen] = useState(false);
 
     const handleSerach = () => {
         console.log(search, box);
         router.push(`/mydvdbox/dvdtable?search=${search.toString()}&box=${box.toString()}`);
+        setOpen(false);
     }
 
     return (
-        <Dialog>
+        <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger>🔍</DialogTrigger>
             <DialogContent>
                 <DialogHeader>

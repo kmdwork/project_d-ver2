@@ -34,8 +34,9 @@ export default function CloneRegistrationForm({formId, onRemove}: CloneRegistrat
     const handleDecision = () => {
         const selectedMovie = results_formId.find((movie) => movie.id === selectedMovieId_formId)
         if (selectedMovie) {
+            const movieTitle = (selectedMovie.title == selectedMovie.original_title) ? selectedMovie.title: `${selectedMovie.title}(${selectedMovie.original_title})`;
             setDetailsOpen_formId(false);
-            setQuery_formId(selectedMovie.title);
+            setQuery_formId(movieTitle);
             setTmdbId_formId(String(selectedMovie.id));
             setSelectedMovieImage_formId(selectedMovie.poster_path);
         }

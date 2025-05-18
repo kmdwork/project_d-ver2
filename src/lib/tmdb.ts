@@ -31,7 +31,7 @@ export async function fetchPosterPath(tmdbId: number): Promise<string | null> {
     }
   
     const data = await res.json();
-    console.log(data);
+    // console.log(data);
     
     if (data.poster_path) {
       return `https://image.tmdb.org/t/p/w500${data.poster_path}`;
