@@ -7,7 +7,7 @@
 generator client {
   provider = "prisma-client-js"
   output   = "../src/generated/prisma/client"
-  
+
   binaryTargets = ["native", "rhel-openssl-3.0.x"]
 }
 
@@ -18,26 +18,26 @@ datasource db {
 }
 
 model User {
-  id String @id @default(cuid())
-  name String
-  email String @unique
-  password String
-  movies Movie[]
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  password  String
+  movies    Movie[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
 model Movie {
-  id String @id @default(cuid())
-  title String
-  tmdbId Int?
+  id           String    @id @default(cuid())
+  title        String
+  tmdbId       Int?
   dvdBoxNumber Int
-  dvdNumber Int
-  notes String?
-  watchedAt DateTime?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  authorId String
-  author User @relation(fields: [authorId], references: [id], onDelete: Cascade)
-  image String?
+  dvdNumber    Int
+  notes        String?
+  watchedAt    DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  authorId     String
+  author       User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  image        String?
 }
