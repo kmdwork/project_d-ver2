@@ -165,7 +165,7 @@ const config = {
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "../../../../.env",
+    "rootEnvPath": null,
     "schemaEnvPath": "../../../../.env"
   },
   "relativePath": "../../../../prisma",
@@ -184,8 +184,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/prisma/client\"\n\n  binaryTargets = [\"native\", \"rhel-openssl-3.0.x\"]\n}\n\ndatasource db {\n  // provider = \"sqlite\"\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id        String   @id @default(cuid())\n  name      String\n  email     String   @unique\n  password  String\n  movies    Movie[]\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n}\n\nmodel Movie {\n  id           String    @id @default(cuid())\n  title        String\n  tmdbId       Int?\n  dvdBoxNumber Int\n  dvdNumber    Int\n  notes        String?\n  watchedAt    DateTime?\n  createdAt    DateTime  @default(now())\n  updatedAt    DateTime  @updatedAt\n  authorId     String\n  author       User      @relation(fields: [authorId], references: [id], onDelete: Cascade)\n  image        String?\n}\n",
-  "inlineSchemaHash": "8bee3e7d089d3eee42d405ce605b7147f63fd1a50718c935b720f7b39fef3467",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider      = \"prisma-client-js\"\n  output        = \"../src/generated/prisma/client\"\n  binaryTargets = [\"native\", \"rhel-openssl-3.0.x\"]\n}\n\ndatasource db {\n  // provider = \"sqlite\"\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id        String   @id @default(cuid())\n  name      String\n  email     String   @unique\n  password  String\n  movies    Movie[]\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n}\n\nmodel Movie {\n  id           String    @id @default(cuid())\n  title        String\n  tmdbId       Int?\n  dvdBoxNumber Int\n  dvdNumber    Int\n  notes        String?\n  watchedAt    DateTime?\n  createdAt    DateTime  @default(now())\n  updatedAt    DateTime  @updatedAt\n  authorId     String\n  author       User      @relation(fields: [authorId], references: [id], onDelete: Cascade)\n  image        String?\n}\n",
+  "inlineSchemaHash": "38a0603b4bc212aa36e831a007b1e01ab371f7206617c160c73d538beae40610",
   "copyEngine": true
 }
 config.dirname = '/'
