@@ -36,7 +36,10 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
                 const { email, password } = parsedCredentials.data;
                 const user = await getUser(email);
                 // バリデーションに成功すれば DB からユーザーを取得
-                if(!user) return null;
+                // if(!user) return null;
+                if (!user) {
+                  throw new Error('No user found');
+                }
                 const passwordMatch = await bcryptjs.compare(password, user.password );
                 if(passwordMatch) return user; 
                 // 正しければユーザーオブジェクトを返す（＝ログイン成功）
