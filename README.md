@@ -139,6 +139,12 @@ DB設計
     「/mydvdbox/[id]/DVDInformationEdit」 DVD編集画面
     
 
+エラー
+
+    1.Auth.js  [UntrustedHost: Host must be trusted] Error
+        :ローカル環境で　npm run start　したところログインでエラーが出た。
+        参考　https://qiita.com/ogison/items/1d68cebe8715b9bf3cd1
+
 
 
 

@@ -31,6 +31,7 @@ export const authConfig = {
 
     },
   },
+  trustHost: true,
   providers: [], // Add providers with an empty array for now
   // 認証プロバイダー（Google、GitHub、Emailなど）を定義する場所ですが、今は空配列になっています。
 } satisfies NextAuthConfig;
