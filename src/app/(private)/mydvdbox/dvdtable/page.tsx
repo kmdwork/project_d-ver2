@@ -51,34 +51,36 @@ export default async function DVDTablePage({
                 />
             </div>
         </div>
-        <table className="table-fixed w-full border-collapse border">
-            <thead>
-                <tr className="bg-red-900 text-white">
-                <th className="border p-2 text-center w-[7%]">Poster</th>
-                <th className="border p-2 text-center w-[44%]">Title</th>
-                <th className="border p-2 text-center w-[9%]">BoxNumber</th>
-                <th className="border p-2 text-center w-[9%]">Number</th>
-                <th className="border p-2 text-center w-[25%]">Notes</th>
-                <th className="border p-2 text-center w-[6%]">Edit</th>
-                </tr>
-            </thead>
-            <tbody>
-                {paginatedData.map((item) => (
-                    <tr className="h-24" key={item.id}>
-                        <td className="border p-2 text-center flex justify-center h-24">
-                            {item.tmdbId ? (<Poster alt={item.title} tmdbId={item.tmdbId} />) : (<div className="flex items-center">no image</div>) }
-                        </td>
-                        <td className="border p-2 text-center">{item.title}</td>
-                        <td className="border p-2 text-center">{item.dvdBoxNumber}</td>
-                        <td className="border p-2 text-center">{item.dvdNumber}</td>
-                        <td className="border p-2 text-center">{item.notes}</td>
-                        <td className="border p-2 text-center">
-                            <TableDropdownMenu itemId={item.id} />
-                        </td>
+        <div className="overflow-x-auto sm:overflow-x-visible">
+            <table className="table-fixed w-full border-collapse border">
+                <thead>
+                    <tr className="bg-red-900 text-white">
+                    <th className="border p-2 text-center sm:w-[7%] hidden sm:table-cell">Poster</th>
+                    <th className="border p-2 text-center sm:w-[44%] w-[160px]">Title</th>
+                    <th className="border p-2 text-center sm:w-[9%] w-[110px]">BoxNumber</th>
+                    <th className="border p-2 text-center sm:w-[9%] w-[110px]">Number</th>
+                    <th className="border p-2 text-center sm:w-[25%] hidden sm:table-cell">Notes</th>
+                    <th className="border p-2 text-center sm:w-[6%] w-[50px]">Edit</th>
                     </tr>
-                ))}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {paginatedData.map((item) => (
+                        <tr className="h-24" key={item.id}>
+                            <td className="border p-2 text-center sm:flex justify-center h-24 hidden ">
+                                {item.tmdbId ? (<Poster alt={item.title} tmdbId={item.tmdbId} />) : (<div className="flex items-center">no image</div>) }
+                            </td>
+                            <td className="border p-2 text-center">{item.title}</td>
+                            <td className="border p-2 text-center">{item.dvdBoxNumber}</td>
+                            <td className="border p-2 text-center">{item.dvdNumber}</td>
+                            <td className="border p-2 text-center hidden sm:table-cell">{item.notes}</td>
+                            <td className="border p-2 text-center">
+                                <TableDropdownMenu itemId={item.id} />
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
         <div className="mt-4 flex justify-center">
             <Pagination
                 currentPage={page}

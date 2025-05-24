@@ -30,7 +30,7 @@ export default function RegistrationForm() {
     console.log(state);
 
   return (
-    <Card className="w-full max-w-1/2 mx-auto bg-black text-white">
+    <Card className="w-full max-w-4/5 sm:max-w-1/2 mx-auto bg-black text-white">
         <CardHeader className="mt-5">
             <CardTitle className="line-clamp-2 text-white">DVD 情報入力</CardTitle>
         </CardHeader>

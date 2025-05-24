@@ -121,7 +121,7 @@ export default function CloneRegistrationForm({formId, onRemove}: CloneRegistrat
                     id={`watchedAt-${formId}`}
                     type="date"
                     name={`watchedAt-${formId}`}
-                    className="bg-gray-700 text-white border border-gray-600 w-1/4"
+                    className="bg-gray-700 text-white border border-gray-600 w-3/5 sm:w-1/4"
                 />
             </div>
             <div className='flex items-center justify-around mt-1'>
